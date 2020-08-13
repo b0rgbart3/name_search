@@ -4,6 +4,14 @@ import { useEmployeeContext } from "../utils/GlobalState";
 function EmployeeList() {
   const [state, dispatch] = useEmployeeContext();
 
+  function sort(e, term) {
+    e.preventDefault();
+    dispatch({
+      type: "sort",
+      term: term
+    });
+
+  }
   return (
     <div>
       <div class='listTitle'>Employee List:</div>
@@ -13,7 +21,7 @@ function EmployeeList() {
       <table className="listTable">
       <thead>
               <tr className="headerRow">
-                <td >ID #</td>
+                <td onClick={ (e) => sort(e, "id")}>ID #</td>
                 <td >First Name</td>
                 <td>Last Name</td>
                 <td>Phone </td>
