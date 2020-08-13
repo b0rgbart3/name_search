@@ -6,8 +6,7 @@ const EmployeeContext = createContext({
   firstName: "",
   lastName: "",
   phoneNumber: "",
-  image: "",
-
+  image: ""
 
 });
 const { Provider } = EmployeeContext;

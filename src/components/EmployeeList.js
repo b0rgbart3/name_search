@@ -7,6 +7,7 @@ function EmployeeList() {
   return (
     <div>
       <h4>Employee List:</h4>
+      <h2>Filtering by: </h2>
       <table className="listTable">
       <thead>
               <tr className="headerRow">

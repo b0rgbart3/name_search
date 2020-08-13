@@ -1,38 +1,51 @@
 [
 {
     "id": 1,
-    "firstName": "John",
+    "firstName": "Ron",
     "lastName": "Doe",
     "phoneNumber": "(415) 867-5309",
-    "department": "Billing"
+    "department": "Billing",
+    "image" : "https://scontent-sea1-1.xx.fbcdn.net/v/t1.0-1/p320x320/101420543_10158253572284019_1494451888031006720_o.jpg?_nc_cat=110&_nc_sid=dbb9e7&_nc_ohc=TxPd4A4enS8AX9DSsik&_nc_ht=scontent-sea1-1.xx&_nc_tp=6&oh=104c0ac83bfc1ec0d72fffddb354e761&oe=5F5B20E0"
 },
 {
     "id": 2,
-    "firstName": "Jane",
-    "lastName": "Doe",
+    "firstName": "Joe",
+    "lastName": "Davis",
     "phoneNumber": "(212) 098-4238",
-    "department": "Human Resources"
+    "department": "Human Resources",
+    "image": "https://scontent-sea1-1.xx.fbcdn.net/v/t1.0-1/p320x320/66791458_10157449514748270_6400631199626166272_o.jpg?_nc_cat=101&_nc_sid=dbb9e7&_nc_ohc=G_RN-ffpB-QAX9p0LmM&_nc_ht=scontent-sea1-1.xx&_nc_tp=6&oh=5691c8a60eb8067ceb0ed090366703d3&oe=5F59F8DA"
+
 },
 {
     "id": 3,
     "firstName": "Jane",
     "lastName": "Pratt",
     "phoneNumber": "(510) 442-0987",
-    "department": "Engineering"
+    "department": "Engineering",
+    "image" : "https://scontent-sea1-1.xx.fbcdn.net/v/t1.0-1/c0.120.320.320a/p320x320/96773155_10158175795739210_2387323121548918784_o.jpg?_nc_cat=102&_nc_sid=dbb9e7&_nc_ohc=DVCqdMrvmMYAX-VaFVn&_nc_oc=AQmueuflAetmymzyGYKcCA0m4k5lJx0ksD1c0AAc3AHbq5QjqUF6WeCDQCYxoCxALlA&_nc_ht=scontent-sea1-1.xx&oh=dd8697182e6cbb0b0dcbd3fce456057b&oe=5F599D5D"
 },
 {
     "id": 4,
     "firstName": "Shika",
     "lastName": "Tam",
     "phoneNumber": "(415) 262-4200",
-    "department": "Accounting"
+    "department": "Accounting",
+    "image": "https://scontent-sea1-1.xx.fbcdn.net/v/t1.0-1/p320x320/96084744_2693259920903584_4383188093218324480_n.jpg?_nc_cat=111&_nc_sid=dbb9e7&_nc_ohc=08QGAYUBQacAX8XZ6Ax&_nc_ht=scontent-sea1-1.xx&_nc_tp=6&oh=d4abe7a88e7b1dd3b703835ab504e452&oe=5F5AC7C0"
 },
 {
     "id": 5,
     "firstName": "Estella",
     "lastName": "Hernandez",
     "phoneNumber": "(212) 112-2188",
-    "department": "Engineering"
+    "department": "Engineering",
+    "image": "https://scontent-sea1-1.xx.fbcdn.net/v/t1.0-1/p320x320/13177353_10209699471190515_3453984006637421495_n.jpg?_nc_cat=111&_nc_sid=dbb9e7&_nc_ohc=sIs-2WXgbukAX8yxGdr&_nc_ht=scontent-sea1-1.xx&_nc_tp=6&oh=a0ea02a836fc40e57f2a9931a6d33f79&oe=5F5AF2F9"
+},
+{
+    "firstName": "Sheila",
+    "lastName": "Farley",
+    "phoneNumber": "(880) 103-4038",
+    "department": "Accounting",
+    "image": "https://scontent-sea1-1.xx.fbcdn.net/v/t1.0-1/p320x320/109802145_1453839551484237_685344127752436118_o.jpg?_nc_cat=100&_nc_sid=dbb9e7&_nc_ohc=LiagKPuXZoEAX9HR41u&_nc_ht=scontent-sea1-1.xx&_nc_tp=6&oh=47b26dc9f18b8608c2b24c523f9db5e1&oe=5F5B0487"
 }
 
 ]

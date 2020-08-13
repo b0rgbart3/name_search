@@ -17,7 +17,7 @@ function Form() {
 
   return (
     <div>
-      <h1>Search Employee List:</h1>
+      <h1>Filter Employee List:</h1>
       <form className="form-group mt-5" onSubmit={handleSubmit}>
         <input
           className="form-control"
@@ -25,7 +25,7 @@ function Form() {
           placeholder="Filter the employee list by..."
         />
         <button className="btn btn-success mt-3 mb-5" type="submit">
-         Search
+         Filter
         </button>
       </form>
     </div>
