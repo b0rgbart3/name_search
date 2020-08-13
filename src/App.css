@@ -7,6 +7,30 @@
   pointer-events: none;
 }
 
+.listTable {
+  border:1px solid red;
+  background-color:#eeeeee;
+  border-radius:8px;
+  overflow: hidden;
+  width:100%;
+  box-sizing: border-box;
+}
+.listRow {
+  border-bottom:1px solid gray;
+}
+
+.listCell {
+  padding:18px;
+}
+
+.headerRow {
+
+}
+.headerRow td {
+  padding:18px;
+}
+
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;

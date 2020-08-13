@@ -7,13 +7,34 @@ function EmployeeList() {
   return (
     <div>
       <h4>Employee List:</h4>
-      <ul className="list-group">
+      <table className="listTable">
+      <thead>
+              <tr className="headerRow">
+                <td >First Name</td>
+                <td>Last Name</td>
+                <td>Phone </td>
+                <td>Department</td>
+              </tr>
+          </thead>
+          <tbody>
         {state.map((item, index) => (
-          <li className="list-group-item col-12" key={item.id}>
-           { item.firstName}
-          </li>
+              <tr className="listRow">
+              <td className="listCell" key={item.id}>
+              { item.firstName}
+              </td>
+              <td className="listCell" key={item.id}>
+              { item.lastName}
+              </td>
+              <td className="listCell" key={item.id}>
+              { item.phoneNumber}
+              </td>
+              <td className="listCell" key={item.id}>
+              { item.department}
+              </td>
+              </tr>
         ))}
-      </ul>
+            </tbody>
+      </table>
     </div>
   );
 }
