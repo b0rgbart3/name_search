@@ -22,10 +22,10 @@ function EmployeeList() {
       <thead>
               <tr className="headerRow">
                 <td onClick={ (e) => sort(e, "id")}>ID #</td>
-                <td >First Name</td>
-                <td>Last Name</td>
-                <td>Phone </td>
-                <td>Department</td>
+                <td onClick={ (e) => sort(e, "firstName")}>First Name</td>
+                <td onClick={ (e) => sort(e, "lastName")}>Last Name</td>
+                <td onClick={ (e) => sort(e, "phoneNumber")}>Phone </td>
+                <td onClick={ (e) => sort(e, "department")}>Department</td>
               </tr>
           </thead>
           <tbody>

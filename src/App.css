@@ -57,7 +57,18 @@ background-color:#999999;
   padding-left:6px;
   background-color:#cccccc;
   border:1px solid black;
+  cursor: pointer;
+  user-select: none;
 }
+.headerRow td:hover {
+  padding:4px;
+  padding-left:6px;
+  background-color:#ffffff;
+  border:1px solid black;
+  cursor: pointer;
+}
+
+
 
 .filterTitle {
   font-size:18px;

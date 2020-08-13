@@ -8,7 +8,9 @@ const EmployeeContext = createContext({
       lastName: "",
       phoneNumber: "",
       image: ""}],
-  CurrentFilter: ""
+  CurrentFilter: "",
+  CurrentSort: "",
+  SortDirection: "asc"
 
 });
 const { Provider } = EmployeeContext;
@@ -28,18 +30,23 @@ function reducer(state, action) {
             item.phoneNumber.includes(action.term) || 
             item.department.includes(action.term); });
     return ({ Employees: filteredEmployeeList, 
-              CurrentFilter: action.term});
+              CurrentFilter: action.term, 
+              CurrentSort: "",
+              CurrentDirection: "asc"});
   case "sort":
     let sortedEmployeeList = state.Employees.sort((a, b) => (a[action.term] > b[action.term]) ? 1 : -1);
     return ({ Employees: sortedEmployeeList, 
-              CurrentFilter: action.term});
+              CurrentFilter: state.CurrentFilter,
+              CurrentSort: action.term,
+              CurrentDirection: "asc"});
   default:
     return state;
   }
 }
 
 function EmployeeProvider({ value = [], ...props }) {
-  const [state, dispatch] = useReducer(reducer,{Employees: Data, CurrentFilter: ""});
+  const [state, dispatch] = useReducer(reducer,
+    {Employees: Data, CurrentFilter: "", CurrentDirection: "asc"});
 
   return <Provider value={[state, dispatch]} {...props} />;
 }
