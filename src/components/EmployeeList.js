@@ -6,8 +6,10 @@ function EmployeeList() {
 
   return (
     <div>
-      <h4>Employee List:</h4>
-      <h2>Filtering by: {state.CurrentFilter}</h2>
+      <div class='listTitle'>Employee List:</div>
+      {state.CurrentFilter ? 
+      <div class='listSubTitle'>Filtering by: {state.CurrentFilter}</div>
+      : <div class='listSubTitle'></div>}
       <table className="listTable">
       <thead>
               <tr className="headerRow">

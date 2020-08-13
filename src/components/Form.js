@@ -15,17 +15,31 @@ function Form() {
     inputRef.current.value = "";
   }
 
+  function clearFilter(e) {
+    e.preventDefault();
+
+    dispatch({
+      type: "clear",
+      term: ""
+    });
+    inputRef.current.value = "";
+
+  }
+
   return (
-    <div>
-      <h1>Filter Employee List:</h1>
-      <form className="mt-5" onSubmit={handleSubmit}>
+    <div  className="filterForm">
+      <div class='filterTitle'>Filter Employee List:</div>
+      <form onSubmit={handleSubmit}>
         <input
-          className="form-control"
+          className="searchInput"
           ref={inputRef}
           placeholder="Filter the employee list by..."
         />
-        <button className="btn btn-success mt-3 mb-5" type="submit">
+        <button className="btn btn-primary" type="submit">
          Filter
+        </button>
+        <button className="btn btn-success" onClick={(e)=>clearFilter(e)}>
+         Clear Filter
         </button>
       </form>
     </div>

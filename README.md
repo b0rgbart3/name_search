@@ -1,17 +1,19 @@
 # Name-Search
-Allow a user to view a list of employees filtered by a search field
+A React app that allows a user to view a list of employees filtered by a search field, and sort the list
 
 ![screenshot](screenshot)
 # Table of contents
-1. [Installation](#Installation)
-2. [Usage](#Usage)
-3. [Live Demo](#Live_Demo)
-4. [License](#License)
-5. [Features](#Features)
-6. [Technology](#Technology)
-7. [Badges](#Badges)
-8. [User Story](#User_Story)
-9. [Business Context](#Business_Context)
+- [Name-Search](#name-search)
+- [Table of contents](#table-of-contents)
+  - [Installation](#installation)
+  - [Usage](#usage)
+  - [Live Demo](#live-demo)
+  - [License](#license)
+  - [Features](#features)
+  - [Technology](#technology)
+  - [Badges](#badges)
+  - [User Story](#user-story)
+  - [Business Context](#business-context)
 <a name="Installation"></a>
 ## Installation
 ```sh

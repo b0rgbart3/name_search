@@ -15,6 +15,10 @@ const { Provider } = EmployeeContext;
 
 function reducer(state, action) {
   switch (action.type) {
+    case "clear":
+      state.Employees = Data;
+      return ({Employees: state.Employees, 
+               CurrentFilter: ""});
   case "search":
     // whenever we do a sort, we want to start with the full list.
     state.Employees = Data;
