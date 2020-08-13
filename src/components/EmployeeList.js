@@ -7,10 +7,11 @@ function EmployeeList() {
   return (
     <div>
       <h4>Employee List:</h4>
-      <h2>Filtering by: </h2>
+      <h2>Filtering by: {state.CurrentFilter}</h2>
       <table className="listTable">
       <thead>
               <tr className="headerRow">
+                <td >ID #</td>
                 <td >First Name</td>
                 <td>Last Name</td>
                 <td>Phone </td>
@@ -18,18 +19,22 @@ function EmployeeList() {
               </tr>
           </thead>
           <tbody>
-        {state.map((item, index) => (
+          {/* key={item.id} */}
+        {state.Employees.map((item, index) => (
               <tr className="listRow">
-              <td className="listCell" key={item.id}>
+              <td className="listCell">
+              { item.id}
+              </td>
+              <td className="listCell">
               { item.firstName}
               </td>
-              <td className="listCell" key={item.id}>
+              <td className="listCell">
               { item.lastName}
               </td>
-              <td className="listCell" key={item.id}>
+              <td className="listCell">
               { item.phoneNumber}
               </td>
-              <td className="listCell" key={item.id}>
+              <td className="listCell">
               { item.department}
               </td>
               </tr>

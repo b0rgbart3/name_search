@@ -2,11 +2,13 @@ import React, { createContext, useReducer, useContext } from "react";
 import Data from "../data/data.json";
 
 const EmployeeContext = createContext({
-  id: "",
-  firstName: "",
-  lastName: "",
-  phoneNumber: "",
-  image: ""
+  Employees: [ {
+      id: "",
+      firstName: "",
+      lastName: "",
+      phoneNumber: "",
+      image: ""}],
+  CurrentFilter: ""
 
 });
 const { Provider } = EmployeeContext;
@@ -14,20 +16,26 @@ const { Provider } = EmployeeContext;
 function reducer(state, action) {
   switch (action.type) {
   case "search":
-    return state.filter((item, index) => {
-      return item.firstName.includes(action.value) ||
-             item.lastName.includes(action.value) ||
-             item.phoneNumber.includes(action.value);
-    });
+    // whenever we do a sort, we want to start with the full list.
+    state.Employees = Data;
+    let filteredEmployeeList  = state.Employees.filter((item, index) => {
+            return item.firstName.includes(action.term) ||
+            item.lastName.includes(action.term) ||
+            item.phoneNumber.includes(action.term) || 
+            item.department.includes(action.term); });
+    return ({ Employees: filteredEmployeeList, 
+              CurrentFilter: action.term});
   case "sort":
-    return state.sort((a, b) => (a[action.value] > b[action.value]) ? 1 : -1)
+    let sortedEmployeeList = state.Employees.sort((a, b) => (a[action.term] > b[action.term]) ? 1 : -1);
+    return ({ Employees: sortedEmployeeList, 
+              CurrentFilter: action.term});
   default:
     return state;
   }
 }
 
 function EmployeeProvider({ value = [], ...props }) {
-  const [state, dispatch] = useReducer(reducer, Data);
+  const [state, dispatch] = useReducer(reducer,{Employees: Data, CurrentFilter: ""});
 
   return <Provider value={[state, dispatch]} {...props} />;
 }

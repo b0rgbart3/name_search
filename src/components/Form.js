@@ -18,7 +18,7 @@ function Form() {
   return (
     <div>
       <h1>Filter Employee List:</h1>
-      <form className="form-group mt-5" onSubmit={handleSubmit}>
+      <form className="mt-5" onSubmit={handleSubmit}>
         <input
           className="form-control"
           ref={inputRef}
