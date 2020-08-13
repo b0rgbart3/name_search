@@ -10,7 +10,7 @@ const EmployeeContext = createContext({
       image: ""}],
   CurrentFilter: "",
   CurrentSort: "",
-  SortDirection: "asc"
+  SortDirection: ""
 
 });
 const { Provider } = EmployeeContext;
@@ -32,13 +32,26 @@ function reducer(state, action) {
     return ({ Employees: filteredEmployeeList, 
               CurrentFilter: action.term, 
               CurrentSort: "",
-              CurrentDirection: "asc"});
+              SortDirection: ""});
   case "sort":
-    let sortedEmployeeList = state.Employees.sort((a, b) => (a[action.term] > b[action.term]) ? 1 : -1);
+    console.log("Before: Direction: " + state.SortDirection);
+
+    state.SortDirection === "asc" ? 
+    state.SortDirection = "desc" :
+    state.SortDirection = "asc";
+
+    console.log("After: Direction: " + state.SortDirection);
+    let sortedEmployeeList = [];
+    if (state.sortDirection === "asc") {
+      sortedEmployeeList = state.Employees.sort((a, b) => (a[action.term] > b[action.term]) ? 1 : -1);
+    }
+    else {
+      sortedEmployeeList = state.Employees.sort((a, b) => (a[action.term] < b[action.term]) ? 1 : -1);
+    }
     return ({ Employees: sortedEmployeeList, 
               CurrentFilter: state.CurrentFilter,
               CurrentSort: action.term,
-              CurrentDirection: "asc"});
+              SortDirection: state.SortDirection});
   default:
     return state;
   }
@@ -46,7 +59,7 @@ function reducer(state, action) {
 
 function EmployeeProvider({ value = [], ...props }) {
   const [state, dispatch] = useReducer(reducer,
-    {Employees: Data, CurrentFilter: "", CurrentDirection: "asc"});
+    {Employees: Data, CurrentFilter: "", CurrentSort: "", SortDirection: "asc"});
 
   return <Provider value={[state, dispatch]} {...props} />;
 }
