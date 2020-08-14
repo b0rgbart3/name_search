@@ -15,17 +15,17 @@ const EmployeeContext = createContext({
 });
 const { Provider } = EmployeeContext;
 
-function reducer(state, action) {
+function reducer({Employees, CurrentFilter, CurrentSort,SortDirection}, action) {
+
   console.log("In the reducer.");
   switch (action.type) {
     case "clear":
-      state.Employees = Data;
-      return ({Employees: state.Employees, 
+      return ({Employees: Data, 
                CurrentFilter: "", CurrentSort:"", SortDirection:""});
   case "search":
     // whenever we do a sort, we want to start with the full list.
-    state.Employees = Data;
-    let filteredEmployeeList  = state.Employees.filter((item, index) => {
+   
+    let filteredEmployeeList  = Employees.filter((item, index) => {
             return item.firstName.includes(action.term) ||
             item.lastName.includes(action.term) ||
             item.phoneNumber.includes(action.term) || 
@@ -35,27 +35,27 @@ function reducer(state, action) {
               CurrentSort: "",
               SortDirection: ""});
   case "sort":
-    console.log("Before: Direction: " + state.SortDirection);
+    console.log("Before: Direction: " + SortDirection);
 
-    state.SortDirection === "asc" ? 
-    state.SortDirection = "desc" :
-    state.SortDirection = "asc";
+    SortDirection === "asc" ? 
+    SortDirection = "desc" :
+    SortDirection = "asc";
 
-    console.log("After: Direction: " + state.SortDirection);
+    console.log("After: Direction: " + SortDirection);
     let sortedEmployeeList = [];
-    if (state.sortDirection === "asc") {
-      sortedEmployeeList = state.Employees.sort((a, b) => (a[action.term] > b[action.term]) ? 1 : -1);
+    if (SortDirection === "asc") {
+      sortedEmployeeList = Employees.sort((a, b) => (a[action.term] > b[action.term]) ? 1 : -1);
     }
     else {
-      sortedEmployeeList = state.Employees.sort((b, a) => (a[action.term] > b[action.term]) ? 1 : -1);
+      sortedEmployeeList = Employees.sort((b, a) => (a[action.term] > b[action.term]) ? 1 : -1);
     }
     return ({ Employees: sortedEmployeeList, 
-              CurrentFilter: state.CurrentFilter,
+              CurrentFilter,
               CurrentSort: action.term,
-              SortDirection: state.SortDirection});
+              SortDirection});
 
   default:
-    return state;
+    return {Employees, CurrentFilter, CurrentSort,SortDirection};
   }
 }
 

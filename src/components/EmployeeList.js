@@ -4,6 +4,18 @@ import { useEmployeeContext } from "../utils/GlobalState";
 function EmployeeList() {
   const [state, dispatch] = useEmployeeContext();
 
+  const styles = {
+    asc: {
+      color:"#ff0000"
+    },
+    desc: {
+      color:"#00ff00",
+      backgroundImage: "URL(/public/images/desc.svg)",
+      backgroundRepeat: "no-repeat",
+      backgroundPosition: "100%, 0%"
+    }
+}
+
   function sort(e, term) {
     e.preventDefault();
     e.stopPropagation();
@@ -20,11 +32,15 @@ function EmployeeList() {
       {state.CurrentFilter ? 
       <div classNames='listSubTitle'>Filtering by: {state.CurrentFilter}</div>
       : <div className='listSubTitle'></div>}
+
+
       <table className="listTable">
       <thead>
               <tr className="headerRow">
                 
-                <td className={state.sortDirection === "asc" ? "asc" : "desc"} onClick={ (e) => sort(e, "id")} >ID #</td>
+                <td style={state.SortDirection === "asc" ? styles.asc : styles.desc } onClick={ (e) => sort(e, "id")} >
+                  ID#
+                </td>
                 <td onClick={ (e) => sort(e, "firstName")}>First Name</td>
                 <td onClick={ (e) => sort(e, "lastName")}>Last Name</td>
                 <td onClick={ (e) => sort(e, "phoneNumber")}>Phone </td>
