@@ -6,6 +6,8 @@ function EmployeeList() {
 
   function sort(e, term) {
     e.preventDefault();
+    e.stopPropagation();
+    console.log("-------------");
     dispatch({
       type: "sort",
       term: term
@@ -14,14 +16,15 @@ function EmployeeList() {
   }
   return (
     <div>
-      <div class='listTitle'>Employee List:</div>
+      <div className='listTitle'>Employee List:</div>
       {state.CurrentFilter ? 
-      <div class='listSubTitle'>Filtering by: {state.CurrentFilter}</div>
-      : <div class='listSubTitle'></div>}
+      <div classNames='listSubTitle'>Filtering by: {state.CurrentFilter}</div>
+      : <div className='listSubTitle'></div>}
       <table className="listTable">
       <thead>
               <tr className="headerRow">
-                <td onClick={ (e) => sort(e, "id")}>ID #</td>
+                
+                <td style={state.sortDirection onClick={ (e) => sort(e, "id")}>ID #</td>
                 <td onClick={ (e) => sort(e, "firstName")}>First Name</td>
                 <td onClick={ (e) => sort(e, "lastName")}>Last Name</td>
                 <td onClick={ (e) => sort(e, "phoneNumber")}>Phone </td>
@@ -31,20 +34,20 @@ function EmployeeList() {
           <tbody>
           {/* key={item.id} */}
         {state.Employees.map((item, index) => (
-              <tr className="listRow">
-              <td className="listCell">
+              <tr className="listRow" key={index}>
+              <td className="listCell" key='0'>
               { item.id}
               </td>
-              <td className="listCell">
+              <td className="listCell" key='1'>
               { item.firstName}
               </td>
-              <td className="listCell">
+              <td className="listCell" key='2'>
               { item.lastName}
               </td>
-              <td className="listCell">
+              <td className="listCell" key='3'>
               { item.phoneNumber}
               </td>
-              <td className="listCell">
+              <td className="listCell" key='4'>
               { item.department}
               </td>
               </tr>
@@ -58,24 +61,3 @@ function EmployeeList() {
 export default EmployeeList;
 
 
-
-// <ul className="list-group">
-// {state.map((item, index) => (
-//   <li className="list-group-item col-12" key={item.id}>
-//     xxxx
-//     {/* <button
-//       className="btn btn-warning mr-4"
-//       onClick={() => dispatch({ type: "prioritize", index })}
-//     >
-//       Prioritize
-//     </button>
-//     <button
-//       className="btn btn-danger mr-4"
-//       onClick={() => dispatch({ type: "remove", index })}
-//     >
-//       X Remove
-//     </button> */}
-//     {/* {index}:<span className={item.priority ? "font-weight-bold" : ""}> {item.name}</span> */}
-//   </li>
-// ))}
-// </ul>

@@ -8,6 +8,7 @@ function Form() {
   function handleSubmit(e) {
     e.preventDefault();
 
+    console.log("xxxxxxxxxx");
     dispatch({
       type: "search",
       term: inputRef.current.value
@@ -17,7 +18,7 @@ function Form() {
 
   function clearFilter(e) {
     e.preventDefault();
-
+    console.log("cccccccccc");
     dispatch({
       type: "clear",
       term: ""
@@ -28,7 +29,7 @@ function Form() {
 
   return (
     <div  className="filterForm">
-      <div class='filterTitle'>Filter Employee List:</div>
+      <div className='filterTitle'>Filter Employee List:</div>
       <form onSubmit={handleSubmit}>
         <input
           className="searchInput"

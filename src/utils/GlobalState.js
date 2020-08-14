@@ -1,4 +1,4 @@
-import React, { createContext, useReducer, useContext } from "react";
+import React, { createContext, useCallback, createReducer, useReducer, useContext } from "react";
 import Data from "../data/data.json";
 
 const EmployeeContext = createContext({
@@ -16,6 +16,7 @@ const EmployeeContext = createContext({
 const { Provider } = EmployeeContext;
 
 function reducer(state, action) {
+  console.log("In the reducer.");
   switch (action.type) {
     case "clear":
       state.Employees = Data;
@@ -46,7 +47,7 @@ function reducer(state, action) {
       sortedEmployeeList = state.Employees.sort((a, b) => (a[action.term] > b[action.term]) ? 1 : -1);
     }
     else {
-      sortedEmployeeList = state.Employees.sort((a, b) => (a[action.term] < b[action.term]) ? 1 : -1);
+      sortedEmployeeList = state.Employees.sort((b, a) => (a[action.term] > b[action.term]) ? 1 : -1);
     }
     return ({ Employees: sortedEmployeeList, 
               CurrentFilter: state.CurrentFilter,
@@ -58,8 +59,18 @@ function reducer(state, action) {
 }
 
 function EmployeeProvider({ value = [], ...props }) {
-  const [state, dispatch] = useReducer(reducer,
+
+  const memorizedReducer = useCallback(createReducer({Employees: Data, CurrentFilter: "", CurrentSort: "", SortDirection: "asc"}
+
+ ), {Employees: Data, CurrentFilter: "", CurrentSort: "", SortDirection: "asc"});
+  const [state, dispatch] = useReducer(memorizedReducer,
     {Employees: Data, CurrentFilter: "", CurrentSort: "", SortDirection: "asc"});
+
+
+    
+    // const [state, dispatch] = useReducer(reducer,
+    //   {Employees: Data, CurrentFilter: "", CurrentSort: "", SortDirection: "asc"});
+  
 
   return <Provider value={[state, dispatch]} {...props} />;
 }
