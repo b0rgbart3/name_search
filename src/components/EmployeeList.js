@@ -24,7 +24,7 @@ function EmployeeList() {
       <thead>
               <tr className="headerRow">
                 
-                <td style={state.sortDirection onClick={ (e) => sort(e, "id")}>ID #</td>
+                <td className={state.sortDirection === "asc" ? "asc" : "desc"} onClick={ (e) => sort(e, "id")} >ID #</td>
                 <td onClick={ (e) => sort(e, "firstName")}>First Name</td>
                 <td onClick={ (e) => sort(e, "lastName")}>Last Name</td>
                 <td onClick={ (e) => sort(e, "phoneNumber")}>Phone </td>

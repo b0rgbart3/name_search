@@ -1,4 +1,4 @@
-import React, { createContext, useCallback, createReducer, useReducer, useContext } from "react";
+import React, { createContext, useReducer, useContext } from "react";
 import Data from "../data/data.json";
 
 const EmployeeContext = createContext({
@@ -21,7 +21,7 @@ function reducer(state, action) {
     case "clear":
       state.Employees = Data;
       return ({Employees: state.Employees, 
-               CurrentFilter: ""});
+               CurrentFilter: "", CurrentSort:"", SortDirection:""});
   case "search":
     // whenever we do a sort, we want to start with the full list.
     state.Employees = Data;
@@ -53,24 +53,15 @@ function reducer(state, action) {
               CurrentFilter: state.CurrentFilter,
               CurrentSort: action.term,
               SortDirection: state.SortDirection});
+
   default:
     return state;
   }
 }
 
 function EmployeeProvider({ value = [], ...props }) {
-
-  const memorizedReducer = useCallback(createReducer({Employees: Data, CurrentFilter: "", CurrentSort: "", SortDirection: "asc"}
-
- ), {Employees: Data, CurrentFilter: "", CurrentSort: "", SortDirection: "asc"});
-  const [state, dispatch] = useReducer(memorizedReducer,
+  const [state, dispatch] = useReducer(reducer,
     {Employees: Data, CurrentFilter: "", CurrentSort: "", SortDirection: "asc"});
-
-
-    
-    // const [state, dispatch] = useReducer(reducer,
-    //   {Employees: Data, CurrentFilter: "", CurrentSort: "", SortDirection: "asc"});
-  
 
   return <Provider value={[state, dispatch]} {...props} />;
 }
