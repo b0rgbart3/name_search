@@ -15,7 +15,7 @@ const EmployeeContext = createContext({
 });
 const { Provider } = EmployeeContext;
 
-function reducer({Employees, CurrentFilter, CurrentSort,SortDirection}, action) {
+function reducer({Employees, CurrentFilter, CurrentSort, SortDirection}, action) {
 
  // console.log("In the reducer.");
   switch (action.type) {
