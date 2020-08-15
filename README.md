@@ -28,7 +28,8 @@ Usage
 ```
 <a name="Live_Demo"></a>
 ## Live Demo
-live demo
+<a href="https://b0rgbart3.github.io/name_search/">
+live demo</a>
 <a name='License'></a>
 ## License
 [![MIT license](https://img.shields.io/badge/License-MIT-blue.svg)](https://lbesson.mit-license.org/)

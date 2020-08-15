@@ -80,7 +80,6 @@ background-color:#999999;
 .headerRow td.desc {
   background-size: 38px 38px;
   background-color:#0088ff;
-  background-image:url(/public/images/desc.svg);
   background-size:50%;
 }
 
