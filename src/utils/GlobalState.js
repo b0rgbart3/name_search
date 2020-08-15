@@ -17,7 +17,7 @@ const { Provider } = EmployeeContext;
 
 function reducer({Employees, CurrentFilter, CurrentSort,SortDirection}, action) {
 
-  console.log("In the reducer.");
+ // console.log("In the reducer.");
   switch (action.type) {
     case "clear":
       return ({Employees: Data, 
@@ -35,13 +35,23 @@ function reducer({Employees, CurrentFilter, CurrentSort,SortDirection}, action) 
               CurrentSort: "",
               SortDirection: ""});
   case "sort":
-    console.log("Before: Direction: " + SortDirection);
-
-    SortDirection === "asc" ? 
-    SortDirection = "desc" :
-    SortDirection = "asc";
-
-    console.log("After: Direction: " + SortDirection);
+    if (CurrentSort === action.term)
+    {
+      // we are sorting the same column over again,
+      // so we can toggle the sortDirection
+      // console.log("Toggling");
+      SortDirection === "asc" ? 
+      SortDirection = "desc" :
+      SortDirection = "asc";
+    }
+    else {
+      // we are sorting a different table header
+      // so let's start the sortDirection out in the 
+      // ascending order
+      // console.log("New Tab");
+      SortDirection = "asc";
+    }
+   
     let sortedEmployeeList = [];
     if (SortDirection === "asc") {
       sortedEmployeeList = Employees.sort((a, b) => (a[action.term] > b[action.term]) ? 1 : -1);

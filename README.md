@@ -1,10 +1,10 @@
 # Name-Search
 A React app that allows a user to view a list of employees filtered by a search field, and sort the list
 
-![screenshot](screenshot)
+![screenshot](screenshot.png)
+
 # Table of contents
-- [Name-Search](#name-search)
-- [Table of contents](#table-of-contents)
+
   - [Installation](#installation)
   - [Usage](#usage)
   - [Live Demo](#live-demo)
@@ -14,6 +14,8 @@ A React app that allows a user to view a list of employees filtered by a search 
   - [Badges](#badges)
   - [User Story](#user-story)
   - [Business Context](#business-context)
+
+
 <a name="Installation"></a>
 ## Installation
 ```sh
@@ -43,6 +45,17 @@ live demo
 2.  Javascript
 3.  CSS
 4.  Bootstrap
+
+<a name="User_Story"></a>
+## User Story
+```sh
+As a user, I want to be able to view my entire employee directory at once so that I have quick access to their information.
+```
+<a name="Business_Context"></a>
+## Business Context
+An employee or manager would benefit greatly from being able to view non-sensitive data about other employees. It would be particularly helpful to be able to filter employees by name.
+
+
 <a name="Badges"></a>
 ## Badges
  [![Generic badge](https://img.shields.io/badge/made_with-React-<COLOR>.svg)](https://shields.io/)
@@ -52,11 +65,3 @@ live demo
 [![](https://github.com/b0rgBart3.png?size=90)](https://github.com/remarkablemark)
 
 Email: borgBart3@gmail.com
-<a name="User_Story"></a>
-## User Story
-```sh
-As a user, I want to be able to view my entire employee directory at once so that I have quick access to their information.
-```
-<a name="Business_Context"></a>
-## Business Context
-An employee or manager would benefit greatly from being able to view non-sensitive data about other employees. It would be particularly helpful to be able to filter employees by name.

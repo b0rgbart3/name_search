@@ -1,30 +1,95 @@
 import React from "react";
 import { useEmployeeContext } from "../utils/GlobalState";
 
+let myCurrentSort = "";
+let mySortDirection = "asc";
+
+let styleToggle = {
+  id: false,
+  firstName: false,
+  lastName: false,
+  phoneNumber: false,
+  department: false
+}
+
 function EmployeeList() {
   const [state, dispatch] = useEmployeeContext();
 
   const styles = {
     asc: {
-      color:"#ff0000"
+  
     },
     desc: {
-      color:"#00ff00",
-      backgroundImage: "URL(/public/images/desc.svg)",
-      backgroundRepeat: "no-repeat",
-      backgroundPosition: "100%, 0%"
+      backgroundImage: "url(images/desc.svg)",
     }
 }
 
   function sort(e, term) {
     e.preventDefault();
     e.stopPropagation();
+
+    myCurrentSort = term;
+    mySortDirection = mySortDirection==="asc"? "desc" : "asc";
+
     console.log("-------------");
     dispatch({
       type: "sort",
       term: term
     });
 
+    // console.log("CurrentSort: " + state.CurrentSort);
+    console.log("My Current Sort: " + myCurrentSort);
+    // console.log("SortDirection: " + state.SortDirection);
+    console.log("My Sort Direction: " + mySortDirection);
+    styleToggle = {
+      id: false,
+      firstName: false,
+      lastName: false,
+      phoneNumber: false,
+      department: false
+    }
+
+    if (myCurrentSort === state.CurrentSort) {
+    switch(myCurrentSort) {
+      case "id":
+        if (mySortDirection === "asc")
+        {
+        styleToggle.id = true;
+        } else {
+          styleToggle.id = false;
+        }
+        break;
+      case "firstName":
+        if (mySortDirection === "asc")
+        {
+        styleToggle.firstName = true;
+        }else {
+          styleToggle.firstName = false;
+        }
+        break;
+      case "lastName":
+        if (mySortDirection === "asc")
+        {
+        styleToggle.lastName = true;
+        }
+        break;
+      case "phoneNumber":
+        if (mySortDirection === "asc")
+        {
+        styleToggle.phoneNumber = true;
+        }
+        break;
+      case "department":
+        if (mySortDirection === "asc")
+        {
+        styleToggle.department = true;
+        }
+        break;
+      default:
+        break;
+    }
+    }
+    console.log(styleToggle);
   }
   return (
     <div>
@@ -38,13 +103,17 @@ function EmployeeList() {
       <thead>
               <tr className="headerRow">
                 
-                <td style={state.SortDirection === "asc" ? styles.asc : styles.desc } onClick={ (e) => sort(e, "id")} >
+                <td style={styleToggle.id ? styles.desc: styles.asc } onClick={ (e) => sort(e, "id")} >
                   ID#
                 </td>
-                <td onClick={ (e) => sort(e, "firstName")}>First Name</td>
-                <td onClick={ (e) => sort(e, "lastName")}>Last Name</td>
-                <td onClick={ (e) => sort(e, "phoneNumber")}>Phone </td>
-                <td onClick={ (e) => sort(e, "department")}>Department</td>
+                <td style={styleToggle.firstName ? styles.desc: styles.asc } 
+                 onClick={ (e) => sort(e, "firstName")}>First Name</td>
+                <td style={styleToggle.lastName? styles.desc: styles.asc } 
+                 onClick={ (e) => sort(e, "lastName")}>Last Name</td>
+                <td style={styleToggle.phoneNumber ? styles.desc: styles.asc } 
+                 onClick={ (e) => sort(e, "phoneNumber")}>Phone </td>
+                <td style={styleToggle.department ? styles.desc: styles.asc } 
+                 onClick={ (e) => sort(e, "department")}>Department</td>
               </tr>
           </thead>
           <tbody>
