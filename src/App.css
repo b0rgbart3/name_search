@@ -9,6 +9,10 @@
 
 /* ================================= */
 
+.avatar {
+  width:40px;
+  border-radius:50%;
+}
 .filterForm {
   background-color:#cccccc;
   border-radius:8px;
@@ -50,7 +54,6 @@
 }
 .headerRow {
 background-color:#999999;
-
 }
 .headerRow td {
   padding:4px;
@@ -64,12 +67,22 @@ background-color:#999999;
 .headerRow td:hover {
   padding:4px;
   padding-left:6px;
-  background-color:#ffffff;
+  background-color:#eeeeee;
   border:1px solid black;
   cursor: pointer;
 }
 
+.headerRow td.asc {
+  color:#ffffff;
+  background-color:#00bb00;
+}
 
+.headerRow td.desc {
+  background-size: 38px 38px;
+  background-color:#0088ff;
+  background-image:url(/public/images/desc.svg);
+  background-size:50%;
+}
 
 .filterTitle {
   font-size:18px;

@@ -32,20 +32,20 @@ function EmployeeList() {
 
   const styles = {
     unsorted: {
-      color:"black",
-      backgroundColor:"#cccccc"
+      color: "black",
+      backgroundColor: "#cccccc"
     },
     asc: {
-      color:"#ffffff",
-      backgroundColor:"#00bb00"
+      color: "#ffffff",
+      backgroundColor: "#00bb00"
     },
     desc: {
       backgroundImage: "url(images/desc.svg)",
-      color:"#ffffff",
+      color: "#ffffff",
       backgroundSize: "38px 38px",
-      backgroundColor:"#0088ff"
+      backgroundColor: "#0088ff"
     }
-}
+  }
 
   function sort(e, term) {
     e.preventDefault();
@@ -54,7 +54,7 @@ function EmployeeList() {
     if (sortToggle[term].active) {
       // if this sort term is already active
       // then just change the direction.
-      sortToggle[term].direction= sortToggle[term].direction ==="asc" ? "desc": "asc";
+      sortToggle[term].direction = sortToggle[term].direction === "asc" ? "desc" : "asc";
     } else {
       // otherwise set it to active, set the others to inactive and set the direction to ascending
       for (var property in sortToggle) {
@@ -76,77 +76,90 @@ function EmployeeList() {
       term: term
     });
 
-    
+
   }
   return (
     <div>
       <div className='listTitle'>Employee List:</div>
-      {state.CurrentFilter ? 
-      <div classNames='listSubTitle'>Filtering by: {state.CurrentFilter}</div>
-      : <div className='listSubTitle'></div>}
+      {state.CurrentFilter ?
+        <div classNames='listSubTitle'>Filtering by: {state.CurrentFilter}</div>
+        : <div className='listSubTitle'></div>}
 
 
       <table className="listTable">
-      <thead>
-              <tr className="headerRow">
+        <thead>
+          <tr className="headerRow">
 
-                
-                
-                <td style={
-                  
-                  !sortToggle.id.active ? styles.unsorted : (sortToggle.id.active && (sortToggle.id.direction === "desc")) ? styles.desc : styles.asc 
 
-                } onClick={ (e) => sort(e, "id")} >
-                  ID#
+            <td></td>
+            <td className={
+              !sortToggle.id.active ? "" :
+              (sortToggle.id.active &&
+              (sortToggle.id.direction === "desc")) ?
+                  "desc" : "asc"
+
+            } onClick={(e) => sort(e, "id")} >
+              ID#
                 </td>
-                <td></td>
-                <td   style={
-                       !sortToggle.firstName.active ? styles.unsorted : (sortToggle.firstName.active && (sortToggle.firstName.direction === "desc")) ? styles.desc : styles.asc 
-                } 
-                 onClick={ (e) => sort(e, "firstName")}>First Name</td>
-                
-                <td  
-                 style={
-                  !sortToggle.lastName.active ? styles.unsorted : (sortToggle.lastName.active && (sortToggle.lastName.direction === "desc")) ? styles.desc : styles.asc 
-                } 
-                 onClick={ (e) => sort(e, "lastName")}>Last Name</td>
-                <td style={
-                  !sortToggle.phoneNumber.active ? styles.unsorted : (sortToggle.phoneNumber.active && (sortToggle.phoneNumber.direction === "desc")) ? styles.desc : styles.asc 
-            
-                } 
-                 onClick={ (e) => sort(e, "phoneNumber")}>Phone </td>
-                <td style={
-                    !sortToggle.department.active ? styles.unsorted : (sortToggle.department.active && (sortToggle.department.direction === "desc")) ? styles.desc : styles.asc 
-          
-                } 
-                 onClick={ (e) => sort(e, "department")}>Department</td>
-              </tr>
-          </thead>
-          <tbody>
+
+            <td className={
+              !sortToggle.firstName.active ? "" :
+              (sortToggle.firstName.active &&
+              (sortToggle.firstName.direction === "desc")) ?
+                  "desc" : "asc"
+            }
+              onClick={(e) => sort(e, "firstName")}>First Name</td>
+
+            <td
+              className={
+              !sortToggle.lastName.active ? "" :
+              (sortToggle.lastName.active &&
+                (sortToggle.lastName.direction === "desc")) ?
+                    "desc" : "asc"
+              }
+              onClick={(e) => sort(e, "lastName")}>Last Name</td>
+            <td className={
+                !sortToggle.phoneNumber.active ? "" :
+                (sortToggle.phoneNumber.active &&
+                (sortToggle.phoneNumber.direction === "desc")) ?
+                    "desc" : "asc"
+            }
+              onClick={(e) => sort(e, "phoneNumber")}>Phone </td>
+            <td className={
+                !sortToggle.department.active ? "" :
+                (sortToggle.department.active &&
+                (sortToggle.department.direction === "desc")) ?
+                    "desc" : "asc"
+            }
+              onClick={(e) => sort(e, "department")}>Department</td>
+          </tr>
+        </thead>
+        <tbody>
           {/* key={item.id} */}
-        {state.Employees.map((item, index) => (
-              <tr className="listRow" key={index}>
+          {state.Employees.map((item, index) => (
+            <tr className="listRow" key={index}>
               <td className="listCell" key='0'>
-              { item.id}
+                <img src={item.image} className="avatar" />
               </td>
               <td className="listCell" key='1'>
-                <img src={item.image} style={{width:"40px"}} />
+                {item.id}
               </td>
+
               <td className="listCell" key='2'>
-              { item.firstName}
+                {item.firstName}
               </td>
               <td className="listCell" key='3'>
-              { item.lastName}
+                {item.lastName}
               </td>
               <td className="listCell" key='4'>
-              { item.phoneNumber}
+                {item.phoneNumber}
               </td>
               <td className="listCell" key='5'>
-              { item.department}
+                {item.department}
               </td>
-              </tr>
-        ))}
-            </tbody>
+            </tr>
+          ))}
+        </tbody>
       </table>
     </div>
   );
