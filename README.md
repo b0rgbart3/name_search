@@ -30,9 +30,14 @@ Usage
 ## Live Demo
 <a href="https://b0rgbart3.github.io/name_search/">
 live demo</a>
+
+
 <a name='License'></a>
+
 ## License
 [![MIT license](https://img.shields.io/badge/License-MIT-blue.svg)](https://lbesson.mit-license.org/)
+
+
 <a name="Features"></a>
 ## Features
 1. display list of employee info
@@ -40,6 +45,8 @@ live demo</a>
 3.  sort by first name
 4.  last name
 5.  etc.
+
+
 <a name="Technology"></a>
 ## Technology
 1. React

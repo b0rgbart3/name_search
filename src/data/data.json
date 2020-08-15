@@ -47,6 +47,38 @@
     "phoneNumber": "(212) 112-2188",
     "department": "Engineering",
     "image": "https://scontent-sea1-1.xx.fbcdn.net/v/t1.0-1/p320x320/13177353_10209699471190515_3453984006637421495_n.jpg?_nc_cat=111&_nc_sid=dbb9e7&_nc_ohc=sIs-2WXgbukAX8yxGdr&_nc_ht=scontent-sea1-1.xx&_nc_tp=6&oh=a0ea02a836fc40e57f2a9931a6d33f79&oe=5F5AF2F9"
+},
+{
+    "id": 7,
+    "firstName": "Brian",
+    "lastName": "Nelson",
+    "phoneNumber": "(313) 198-2188",
+    "department": "Maintenance",
+    "image": "https://scontent-lax3-1.xx.fbcdn.net/v/t1.0-1/p480x480/68776961_10157457233093245_7714322061790806016_o.jpg?_nc_cat=109&_nc_sid=dbb9e7&_nc_ohc=66ZK_sbzRNwAX9gstAC&_nc_ht=scontent-lax3-1.xx&_nc_tp=6&oh=1cb0c3d05a5527eea681909c792e8ff4&oe=5F5E28E4"
+},
+{
+    "id": 8,
+    "firstName": "Jim",
+    "lastName": "Feldman",
+    "phoneNumber": "(290) 765-1209",
+    "department": "Human Resources",
+    "image": "https://scontent-lax3-1.xx.fbcdn.net/v/t1.0-1/c22.15.442.441a/p480x480/69798650_10157331707855944_2445457105923080192_o.jpg?_nc_cat=101&_nc_sid=dbb9e7&_nc_ohc=i0wkAoyn3DoAX-y-jLN&_nc_ht=scontent-lax3-1.xx&oh=a8a483ade597291ec8beb484bf0469d8&oe=5F5E5C23"
+},
+{
+    "id": 9,
+    "firstName": "Carol",
+    "lastName": "Mispin",
+    "phoneNumber": "(317) 349-6732",
+    "department": "Human Resources",
+    "image": "https://scontent-lax3-1.xx.fbcdn.net/v/t1.0-1/p480x480/67601798_10214713031169502_8455188089101352960_o.jpg?_nc_cat=108&_nc_sid=dbb9e7&_nc_ohc=u6J_9z3jEykAX8STE5v&_nc_ht=scontent-lax3-1.xx&_nc_tp=6&oh=0a56b93892ffe38bbf29a4740aac3cb3&oe=5F5C1BA1"
+}, 
+{
+    "id": 10,
+    "firstName": "Kai",
+    "lastName": "Kim",
+    "phoneNumber": "(510) 270-6732",
+    "department": "Management",
+    "image": "https://scontent-lax3-1.xx.fbcdn.net/v/t1.0-1/p480x480/10516583_10204364718092642_6156302171358615052_n.jpg?_nc_cat=102&_nc_sid=dbb9e7&_nc_ohc=aoscyD1QgMIAX_kgRvP&_nc_ht=scontent-lax3-1.xx&_nc_tp=6&oh=9bdbbd0eaf9e9bdecd676afe0a939159&oe=5F5CA3A3"
 }
 
 

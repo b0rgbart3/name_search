@@ -42,6 +42,7 @@
   overflow: hidden;
   width:100%;
   box-sizing: border-box;
+  margin-bottom:80px;
 }
 .listRow {
   border-bottom:1px solid gray;
