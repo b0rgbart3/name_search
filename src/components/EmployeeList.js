@@ -1,26 +1,49 @@
 import React from "react";
 import { useEmployeeContext } from "../utils/GlobalState";
 
-let myCurrentSort = "";
-let mySortDirection = "asc";
 
-let styleToggle = {
-  id: false,
-  firstName: false,
-  lastName: false,
-  phoneNumber: false,
-  department: false
+let sortToggle = {
+  id: {
+    active: false,
+    direction: "asc"
+  },
+  firstName: {
+    active: false,
+    direction: "asc"
+  },
+  lastName: {
+    active: false,
+    direction: "asc"
+  },
+  phoneNumber: {
+    active: false,
+    direction: "asc"
+  },
+  department: {
+    active: false,
+    direction: "asc"
+  }
+
 }
+
 
 function EmployeeList() {
   const [state, dispatch] = useEmployeeContext();
 
   const styles = {
+    unsorted: {
+      color:"black",
+      backgroundColor:"#cccccc"
+    },
     asc: {
-  
+      color:"#ffffff",
+      backgroundColor:"#00bb00"
     },
     desc: {
-      backgroundImage: "url(images/desc.svg)",
+      // backgroundImage: "url(images/desc.svg)",
+      color:"#ffffff",
+      backgroundSize: "38px 38px",
+      backgroundColor:"#0088ff"
     }
 }
 
@@ -28,68 +51,32 @@ function EmployeeList() {
     e.preventDefault();
     e.stopPropagation();
 
-    myCurrentSort = term;
-    mySortDirection = mySortDirection==="asc"? "desc" : "asc";
+    if (sortToggle[term].active) {
+      // if this sort term is already active
+      // then just change the direction.
+      sortToggle[term].direction= sortToggle[term].direction ==="asc" ? "desc": "asc";
+    } else {
+      // otherwise set it to active, set the others to inactive and set the direction to ascending
+      for (var property in sortToggle) {
+        if (sortToggle.hasOwnProperty(property)) {
+          // Set the others back to normal
+          sortToggle[property].active = false;
+          sortToggle[property].direction = "asc";
+        }
+      }
 
-    console.log("-------------");
+      sortToggle[term].active = true;
+      sortToggle[term].direction = "asc";
+    }
+    console.log(sortToggle);
+
+
     dispatch({
       type: "sort",
       term: term
     });
 
-    // console.log("CurrentSort: " + state.CurrentSort);
-    console.log("My Current Sort: " + myCurrentSort);
-    // console.log("SortDirection: " + state.SortDirection);
-    console.log("My Sort Direction: " + mySortDirection);
-    styleToggle = {
-      id: false,
-      firstName: false,
-      lastName: false,
-      phoneNumber: false,
-      department: false
-    }
-
-    if (myCurrentSort === state.CurrentSort) {
-    switch(myCurrentSort) {
-      case "id":
-        if (mySortDirection === "asc")
-        {
-        styleToggle.id = true;
-        } else {
-          styleToggle.id = false;
-        }
-        break;
-      case "firstName":
-        if (mySortDirection === "asc")
-        {
-        styleToggle.firstName = true;
-        }else {
-          styleToggle.firstName = false;
-        }
-        break;
-      case "lastName":
-        if (mySortDirection === "asc")
-        {
-        styleToggle.lastName = true;
-        }
-        break;
-      case "phoneNumber":
-        if (mySortDirection === "asc")
-        {
-        styleToggle.phoneNumber = true;
-        }
-        break;
-      case "department":
-        if (mySortDirection === "asc")
-        {
-        styleToggle.department = true;
-        }
-        break;
-      default:
-        break;
-    }
-    }
-    console.log(styleToggle);
+    
   }
   return (
     <div>
@@ -102,17 +89,34 @@ function EmployeeList() {
       <table className="listTable">
       <thead>
               <tr className="headerRow">
+
                 
-                <td style={styleToggle.id ? styles.desc: styles.asc } onClick={ (e) => sort(e, "id")} >
+                
+                <td style={
+                  
+                  !sortToggle.id.active ? styles.unsorted : (sortToggle.id.active && (sortToggle.id.direction === "desc")) ? styles.desc : styles.asc 
+
+                } onClick={ (e) => sort(e, "id")} >
                   ID#
                 </td>
-                <td style={styleToggle.firstName ? styles.desc: styles.asc } 
+                <td   style={
+                       !sortToggle.firstName.active ? styles.unsorted : (sortToggle.firstName.active && (sortToggle.firstName.direction === "desc")) ? styles.desc : styles.asc 
+                } 
                  onClick={ (e) => sort(e, "firstName")}>First Name</td>
-                <td style={styleToggle.lastName? styles.desc: styles.asc } 
+                <td  
+                 style={
+                  !sortToggle.lastName.active ? styles.unsorted : (sortToggle.lastName.active && (sortToggle.lastName.direction === "desc")) ? styles.desc : styles.asc 
+                } 
                  onClick={ (e) => sort(e, "lastName")}>Last Name</td>
-                <td style={styleToggle.phoneNumber ? styles.desc: styles.asc } 
+                <td style={
+                  !sortToggle.phoneNumber.active ? styles.unsorted : (sortToggle.phoneNumber.active && (sortToggle.phoneNumber.direction === "desc")) ? styles.desc : styles.asc 
+            
+                } 
                  onClick={ (e) => sort(e, "phoneNumber")}>Phone </td>
-                <td style={styleToggle.department ? styles.desc: styles.asc } 
+                <td style={
+                    !sortToggle.department.active ? styles.unsorted : (sortToggle.department.active && (sortToggle.department.direction === "desc")) ? styles.desc : styles.asc 
+          
+                } 
                  onClick={ (e) => sort(e, "department")}>Department</td>
               </tr>
           </thead>

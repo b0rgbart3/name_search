@@ -60,9 +60,7 @@ background-color:#999999;
   cursor: pointer;
   user-select: none;
   min-width:90px;
-  background-position: 94%;
-  background-size: 18px 18px;
-  background-repeat: no-repeat;
+
 }
 .headerRow td:hover {
   padding:4px;
