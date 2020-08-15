@@ -12,7 +12,10 @@
 .avatar {
   width:40px;
   border-radius:50%;
+  display:inline-block;
+
 }
+
 .filterForm {
   background-color:#cccccc;
   border-radius:8px;

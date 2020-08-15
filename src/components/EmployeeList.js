@@ -138,7 +138,7 @@ function EmployeeList() {
           {/* key={item.id} */}
           {state.Employees.map((item, index) => (
             <tr className="listRow" key={index}>
-              <td className="listCell" key='0'>
+              <td className="listCell avatarContainer" key='0'>
                 <img src={item.image} className="avatar" />
               </td>
               <td className="listCell" key='1'>
