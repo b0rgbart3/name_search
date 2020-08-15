@@ -40,7 +40,7 @@ function EmployeeList() {
       backgroundColor:"#00bb00"
     },
     desc: {
-      // backgroundImage: "url(images/desc.svg)",
+      backgroundImage: "url(images/desc.svg)",
       color:"#ffffff",
       backgroundSize: "38px 38px",
       backgroundColor:"#0088ff"
@@ -99,10 +99,12 @@ function EmployeeList() {
                 } onClick={ (e) => sort(e, "id")} >
                   ID#
                 </td>
+                <td></td>
                 <td   style={
                        !sortToggle.firstName.active ? styles.unsorted : (sortToggle.firstName.active && (sortToggle.firstName.direction === "desc")) ? styles.desc : styles.asc 
                 } 
                  onClick={ (e) => sort(e, "firstName")}>First Name</td>
+                
                 <td  
                  style={
                   !sortToggle.lastName.active ? styles.unsorted : (sortToggle.lastName.active && (sortToggle.lastName.direction === "desc")) ? styles.desc : styles.asc 
@@ -128,15 +130,18 @@ function EmployeeList() {
               { item.id}
               </td>
               <td className="listCell" key='1'>
-              { item.firstName}
+                <img src={item.image} style={{width:"40px"}} />
               </td>
               <td className="listCell" key='2'>
-              { item.lastName}
+              { item.firstName}
               </td>
               <td className="listCell" key='3'>
-              { item.phoneNumber}
+              { item.lastName}
               </td>
               <td className="listCell" key='4'>
+              { item.phoneNumber}
+              </td>
+              <td className="listCell" key='5'>
               { item.department}
               </td>
               </tr>
