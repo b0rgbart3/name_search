@@ -1,6 +1,6 @@
 import React from "react";
 import { useEmployeeContext } from "../utils/GlobalState";
-
+// import desc from "../images/desc.svg";
 
 let sortToggle = {
   id: {
@@ -32,18 +32,13 @@ function EmployeeList() {
 
   const styles = {
     unsorted: {
-      color: "black",
-      backgroundColor: "#cccccc"
     },
     asc: {
       color: "#ffffff",
       backgroundColor: "#00bb00"
     },
     desc: {
-      backgroundImage: "url(images/desc.svg)",
-      color: "#ffffff",
-      backgroundSize: "38px 38px",
-      backgroundColor: "#0088ff"
+    
     }
   }
 
@@ -85,20 +80,25 @@ function EmployeeList() {
         <div classNames='listSubTitle'>Filtering by: {state.CurrentFilter}</div>
         : <div className='listSubTitle'></div>}
 
-
+   
       <table className="listTable">
         <thead>
           <tr className="headerRow">
 
 
             <td></td>
-            <td className={
+            <td 
+
+            
+            className={
               !sortToggle.id.active ? "" :
               (sortToggle.id.active &&
               (sortToggle.id.direction === "desc")) ?
                   "desc" : "asc"
 
-            } onClick={(e) => sort(e, "id")} >
+            } 
+          
+          onClick={(e) => sort(e, "id")} >
               ID#
                 </td>
 
