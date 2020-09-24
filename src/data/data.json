@@ -5,7 +5,7 @@
         "lastName": "Farley",
         "phoneNumber": "(880) 103-4038",
         "department": "Accounting",
-        "image": "https://scontent-sea1-1.xx.fbcdn.net/v/t1.0-1/p320x320/109802145_1453839551484237_685344127752436118_o.jpg?_nc_cat=100&_nc_sid=dbb9e7&_nc_ohc=LiagKPuXZoEAX9HR41u&_nc_ht=scontent-sea1-1.xx&_nc_tp=6&oh=47b26dc9f18b8608c2b24c523f9db5e1&oe=5F5B0487"
+        "image": "./images/friends/friend3.jpg"
     },
 {
     "id": 1,
@@ -30,7 +30,7 @@
     "lastName": "Pratt",
     "phoneNumber": "(510) 442-0987",
     "department": "Engineering",
-    "image" : "https://scontent-sea1-1.xx.fbcdn.net/v/t1.0-1/c0.120.320.320a/p320x320/96773155_10158175795739210_2387323121548918784_o.jpg?_nc_cat=102&_nc_sid=dbb9e7&_nc_ohc=DVCqdMrvmMYAX-VaFVn&_nc_oc=AQmueuflAetmymzyGYKcCA0m4k5lJx0ksD1c0AAc3AHbq5QjqUF6WeCDQCYxoCxALlA&_nc_ht=scontent-sea1-1.xx&oh=dd8697182e6cbb0b0dcbd3fce456057b&oe=5F599D5D"
+    "image" : "images/friends/friend2.jpg"
 },
 {
     "id": 4,
@@ -38,7 +38,7 @@
     "lastName": "Tam",
     "phoneNumber": "(415) 262-4200",
     "department": "Accounting",
-    "image": "https://scontent-sea1-1.xx.fbcdn.net/v/t1.0-1/p320x320/96084744_2693259920903584_4383188093218324480_n.jpg?_nc_cat=111&_nc_sid=dbb9e7&_nc_ohc=08QGAYUBQacAX8XZ6Ax&_nc_ht=scontent-sea1-1.xx&_nc_tp=6&oh=d4abe7a88e7b1dd3b703835ab504e452&oe=5F5AC7C0"
+    "image": "images/friends/friend1.jpg"
 },
 {
     "id": 5,
