@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/name_search/static/css/main.30b47a9d.chunk.css",
+    "main.js": "/name_search/static/js/main.325b2d56.chunk.js",
+    "main.js.map": "/name_search/static/js/main.325b2d56.chunk.js.map",
+    "runtime-main.js": "/name_search/static/js/runtime-main.b7a1b1c3.js",
+    "runtime-main.js.map": "/name_search/static/js/runtime-main.b7a1b1c3.js.map",
+    "static/js/2.ba0b3281.chunk.js": "/name_search/static/js/2.ba0b3281.chunk.js",
+    "static/js/2.ba0b3281.chunk.js.map": "/name_search/static/js/2.ba0b3281.chunk.js.map",
+    "index.html": "/name_search/index.html",
+    "precache-manifest.cc83b246e615592bb13fa13a3c40a435.js": "/name_search/precache-manifest.cc83b246e615592bb13fa13a3c40a435.js",
+    "service-worker.js": "/name_search/service-worker.js",
+    "static/css/main.30b47a9d.chunk.css.map": "/name_search/static/css/main.30b47a9d.chunk.css.map",
+    "static/js/2.ba0b3281.chunk.js.LICENSE.txt": "/name_search/static/js/2.ba0b3281.chunk.js.LICENSE.txt",
+    "static/media/App.css": "/name_search/static/media/desc.b4cfccad.svg",
+    "static/media/friend1.jpg": "/name_search/static/media/friend1.48482b1b.jpg",
+    "static/media/friend2.jpg": "/name_search/static/media/friend2.896e429d.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.b7a1b1c3.js",
+    "static/js/2.ba0b3281.chunk.js",
+    "static/css/main.30b47a9d.chunk.css",
+    "static/js/main.325b2d56.chunk.js"
+  ]
+}
