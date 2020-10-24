@@ -1,6 +1,8 @@
 import React from "react";
 import { useEmployeeContext } from "../utils/GlobalState";
 // import desc from "../images/desc.svg";
+import friend1 from "../images/friends/friend1.jpg";
+import friend2 from "../images/friends/friend2.jpg";
 
 let sortToggle = {
   id: {
@@ -139,7 +141,8 @@ function EmployeeList() {
           {state.Employees.map((item, index) => (
             <tr className="listRow" key={index}>
               <td className="listCell avatarContainer" key='0'>
-                <img src={item.image} className="avatar" />
+                <img src={process.env.PUBLIC_URL + '/images/friends/' + item.image + '.jpg'}  className="avatar" />  
+                 {/* {item.image}  */}
               </td>
               <td className="listCell" key='1'>
                 {item.id}

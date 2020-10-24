@@ -57,12 +57,16 @@
 }
 .headerRow {
 background-color:#999999;
+
+}
+
+tr:hover {
+  background-color:white;
 }
 .headerRow td {
-  padding:4px;
+  padding:10px;
   padding-left:6px;
-  background-color:#cccccc;
-  border:1px solid black;
+
   cursor: pointer;
   user-select: none;
   background-repeat: no-repeat;
@@ -71,12 +75,14 @@ background-color:#999999;
   text-transform: uppercase;
   font-size:12px;
   font-weight: 600;
+  padding-top:10px;
+}
+.headerRow:hover {
+  background-color:#999999;
 }
 .headerRow td:hover {
-  padding:4px;
-  padding-left:6px;
-  background-color:#eeeeee;
-  border:1px solid black;
+
+  background-color:#cccccc;
   cursor: pointer;
 }
 

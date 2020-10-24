@@ -5,7 +5,7 @@
         "lastName": "Farley",
         "phoneNumber": "(880) 103-4038",
         "department": "Accounting",
-        "image": "./images/friends/friend3.jpg"
+        "image": "friend2"
     },
 {
     "id": 1,
@@ -13,7 +13,7 @@
     "lastName": "Doe",
     "phoneNumber": "(415) 867-5309",
     "department": "Billing",
-    "image" : "https://scontent-sea1-1.xx.fbcdn.net/v/t1.0-1/p320x320/101420543_10158253572284019_1494451888031006720_o.jpg?_nc_cat=110&_nc_sid=dbb9e7&_nc_ohc=TxPd4A4enS8AX9DSsik&_nc_ht=scontent-sea1-1.xx&_nc_tp=6&oh=104c0ac83bfc1ec0d72fffddb354e761&oe=5F5B20E0"
+    "image" : "friend1"
 },
 {
     "id": 2,
@@ -21,7 +21,7 @@
     "lastName": "Davis",
     "phoneNumber": "(212) 098-4238",
     "department": "Human Resources",
-    "image": "https://scontent-sea1-1.xx.fbcdn.net/v/t1.0-1/p320x320/66791458_10157449514748270_6400631199626166272_o.jpg?_nc_cat=101&_nc_sid=dbb9e7&_nc_ohc=G_RN-ffpB-QAX9p0LmM&_nc_ht=scontent-sea1-1.xx&_nc_tp=6&oh=5691c8a60eb8067ceb0ed090366703d3&oe=5F59F8DA"
+    "image": "friend3"
 
 },
 {
@@ -30,7 +30,7 @@
     "lastName": "Pratt",
     "phoneNumber": "(510) 442-0987",
     "department": "Engineering",
-    "image" : "images/friends/friend2.jpg"
+    "image" : "friend4"
 },
 {
     "id": 4,
@@ -38,7 +38,7 @@
     "lastName": "Tam",
     "phoneNumber": "(415) 262-4200",
     "department": "Accounting",
-    "image": "images/friends/friend1.jpg"
+    "image": "friend7"
 },
 {
     "id": 5,
@@ -46,7 +46,7 @@
     "lastName": "Hernandez",
     "phoneNumber": "(212) 112-2188",
     "department": "Engineering",
-    "image": "https://scontent-sea1-1.xx.fbcdn.net/v/t1.0-1/p320x320/13177353_10209699471190515_3453984006637421495_n.jpg?_nc_cat=111&_nc_sid=dbb9e7&_nc_ohc=sIs-2WXgbukAX8yxGdr&_nc_ht=scontent-sea1-1.xx&_nc_tp=6&oh=a0ea02a836fc40e57f2a9931a6d33f79&oe=5F5AF2F9"
+    "image": "friend9"
 },
 {
     "id": 7,
@@ -54,7 +54,7 @@
     "lastName": "Nelson",
     "phoneNumber": "(313) 198-2188",
     "department": "Maintenance",
-    "image": "https://scontent-lax3-1.xx.fbcdn.net/v/t1.0-1/p480x480/68776961_10157457233093245_7714322061790806016_o.jpg?_nc_cat=109&_nc_sid=dbb9e7&_nc_ohc=66ZK_sbzRNwAX9gstAC&_nc_ht=scontent-lax3-1.xx&_nc_tp=6&oh=1cb0c3d05a5527eea681909c792e8ff4&oe=5F5E28E4"
+    "image": "friend5"
 },
 {
     "id": 8,
@@ -62,7 +62,7 @@
     "lastName": "Feldman",
     "phoneNumber": "(290) 765-1209",
     "department": "Human Resources",
-    "image": "https://scontent-lax3-1.xx.fbcdn.net/v/t1.0-1/c22.15.442.441a/p480x480/69798650_10157331707855944_2445457105923080192_o.jpg?_nc_cat=101&_nc_sid=dbb9e7&_nc_ohc=i0wkAoyn3DoAX-y-jLN&_nc_ht=scontent-lax3-1.xx&oh=a8a483ade597291ec8beb484bf0469d8&oe=5F5E5C23"
+    "image": "friend6"
 },
 {
     "id": 9,
@@ -70,7 +70,7 @@
     "lastName": "Mispin",
     "phoneNumber": "(317) 349-6732",
     "department": "Human Resources",
-    "image": "https://scontent-lax3-1.xx.fbcdn.net/v/t1.0-1/p480x480/67601798_10214713031169502_8455188089101352960_o.jpg?_nc_cat=108&_nc_sid=dbb9e7&_nc_ohc=u6J_9z3jEykAX8STE5v&_nc_ht=scontent-lax3-1.xx&_nc_tp=6&oh=0a56b93892ffe38bbf29a4740aac3cb3&oe=5F5C1BA1"
+    "image": "friend11"
 }, 
 {
     "id": 10,
@@ -78,7 +78,7 @@
     "lastName": "Kim",
     "phoneNumber": "(510) 270-6732",
     "department": "Management",
-    "image": "https://scontent-lax3-1.xx.fbcdn.net/v/t1.0-1/p480x480/10516583_10204364718092642_6156302171358615052_n.jpg?_nc_cat=102&_nc_sid=dbb9e7&_nc_ohc=aoscyD1QgMIAX_kgRvP&_nc_ht=scontent-lax3-1.xx&_nc_tp=6&oh=9bdbbd0eaf9e9bdecd676afe0a939159&oe=5F5CA3A3"
+    "image": "friend10"
 }
 
 
